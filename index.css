@@ -1,0 +1,38 @@
+/*universal*/
+*{
+    color: royalblue;
+}
+h1{
+    border: 2px solid red;
+    /* padding:20px:*/
+    /* padding : 20px 40px 80px 50px;*/
+    padding : 30px 60px;
+    margin: 40px;
+}
+
+/*tag selecter*/
+p{
+    color:rgb(215, 237, 250);
+}
+
+#a{
+    color:darkgoldenrod;
+}
+
+.b{
+ color:crimson;
+}
+
+li:nth-child(2){
+    color:deeppink;
+    font-size: 20px;
+}
+
+h1::after{
+    content: "hello";
+}
+
+h1::first-letter{
+    font-size:80px;
+    color:darkviolet;
+}
