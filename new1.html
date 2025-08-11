@@ -23,14 +23,14 @@
          th,td{
             border:1px solid black;
             padding:10px;
-            text-align: left;
+            text-align: center;
 
         }
         tr:hover{
             background-color: rgb(159, 235, 235);
         }
         .a{
-            background-color: rgb(148, 69, 40);
+            background-color: rgb(240, 227, 118);
         }
 
     </style>
@@ -55,11 +55,11 @@
     <h2>Student Data Table</h2>
     <table>
         <tr>
-        <th>Sno</th>
+        <th>SI.No</th>
         <th>Name</th>
         <th>Email</th>
         </tr>
-        <tbody id="fetchdata"></tbody>
+        <tbody id="fetch"></tbody>
     </table>
     <hr>
         </section>
@@ -98,16 +98,15 @@
     <hr>
     <h3>Contact Form</h3>
     <form>
-        <p>Name:</p>
-        <input type="text">
-        <p>Email:</p>
-        <input type="email">
+        <p>Name:</p><input type="text" placeholder="enter name">
+        <p>Email:</p><input type="email" placeholder="enter email">
         <br>
         <br>
         <button type="submit">Submit</button>
     </form>
     <hr>
     <h3>Fun Zone</h3>
+    <br>
     <button id="color">Change Background Color</button>
     <script>
         const ul=document.getElementById("skills");
@@ -119,10 +118,14 @@
             ul.appendChild(li);
 
         });
+        const c=document.getElementById("color");
+        c.addEventListener("click",()=>{
+            document.body.classList.toggle("a");
+        });
 
-          const data=document.getElementById("fetchdata");
+          const data=document.getElementById("fetch");
         let val=1;
-        const tabledata=async()=>{
+        const table=async()=>{
             const resp=await fetch("https://jsonplaceholder.typicode.com/users");
              const cont=await resp.json();
              cont.forEach((el)=>{
@@ -142,7 +145,7 @@
 
             });
 
-        };tabledata();
+        };table();
     </script>
     </script>
 </body>
