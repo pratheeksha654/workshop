@@ -1,0 +1,32 @@
+/* 576px,768px,992px,1200px,*/
+/*576px:below::-moz-list-bullet
+576-768: table
+768-992:small screens
+992px-1200: large screens*/
+
+.contact{
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+    padding:10px;
+}
+
+
+.about{
+    width:400px;
+    background-color:white;
+    border: 3px solid gray;
+    padding: 20px;
+    
+}
+@media (min-width:700px) and (max-width:992px){
+   .card{
+    width:700px;
+   } 
+}
+.name{
+    font-size: 30px;
+}
+.bio{
+    font-size: 20px;
+}

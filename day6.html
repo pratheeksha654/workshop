@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Fetching api Data</h1>
+   <ul id="fetchlist"></ul>
+    <script>
+//step 1: want instance of tag where we want to add data
+ const a=document.getElementById("fetchlist");
+async function fetching() {
+    try {
+        const b = await fetch("https://jsonplaceholder.typicode.com/albums");
+        console.log(b);
+        if (!b.ok){
+            throw new Error("Network response was not ok");
+        }
+        const data = await b.json();
+        data.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item.title;
+            a.appendChild(li);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+fetching();
+//step 2 want appi data
+//step 3 create li and put content on it
+
+
+    </script>
+
+
+
+
+
+    
+    
+    
+</body>
+</html>
