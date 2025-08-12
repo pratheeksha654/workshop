@@ -4,44 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .B{
-            text-align: center;
-            background-color: lightskyblue;
-            padding:10px;
-            margin:0;
-            width:100%;
-        }
-        .red {
-            color: red;
-        }
-         table{
-             border-collapse:collapse;
-            width:  100%;
-            margin-top: 10px;
-        }
-         th,td{
-            border:1px solid black;
-            padding:10px;
-            text-align: center;
-
-        }
-        tr:hover{
-            background-color: rgb(159, 235, 235);
-        }
-        .a{
-            background-color: rgb(240, 227, 118);
-        }
-
-    </style>
+    <link rel="stylesheet" href="new.css"/>
+    <script src="./new.js" defer></script>
+  
 </head>
 <body>
     <div class="B">
-    <h1><span>Welcome to </span><span class="red">My Website</span></h1>
+    <h1>Welcome to <span class="red">My Website</span></h1>
         <h4>Advanced HTML ,CSS &JS Example</h4>
 
     </div>
-    <hr>
+    
     <p>Click me to change my color! This is <b>more challenging </b> HTML page for students.Famous quote:"Learning never exhausts the mind."Code example:console.log("hello World")  </p>
     <p>The best way to predict the future is to create it "- Abraham Lincooln</p>
     <img src="ABCDERU" alt="Dummy Image">
@@ -61,10 +34,11 @@
         </tr>
         <tbody id="fetch"></tbody>
     </table>
-    <hr>
+    
         </section>
     
     <br>
+    <hr>
     
     <h3>Top Skills</h3>
     <ul>
@@ -93,9 +67,10 @@
         <ul id="skills"></ul>
         <input type="text" id="i" placeholder="Enter new skills">
         <button type="submit" id="button">Add Skill</button>
+        <hr>
 
     
-    <hr>
+    
     <h3>Contact Form</h3>
     <form>
         <p>Name:</p><input type="text" placeholder="enter name">
@@ -105,48 +80,11 @@
         <button type="submit">Submit</button>
     </form>
     <hr>
+    
     <h3>Fun Zone</h3>
     <br>
     <button id="color">Change Background Color</button>
-    <script>
-        const ul=document.getElementById("skills");
-        const input=document.getElementById("i");
-        const btn=document.getElementById("button");
-        btn.addEventListener("click",()=>{
-            let li= document.createElement("li");
-            li.textContent=input.value;
-            ul.appendChild(li);
-
-        });
-        const c=document.getElementById("color");
-        c.addEventListener("click",()=>{
-            document.body.classList.toggle("a");
-        });
-
-          const data=document.getElementById("fetch");
-        let val=1;
-        const table=async()=>{
-            const resp=await fetch("https://jsonplaceholder.typicode.com/users");
-             const cont=await resp.json();
-             cont.forEach((el)=>{
-                let tr=document.createElement("tr");
-                let tdsno=document.createElement("td");
-                let tdname=document.createElement("td");
-                let tdemail=document.createElement("td");
-                tdsno.textContent=val++;
-                tr.appendChild(tdsno);
-                tdname.textContent=el.name;
-                tr.appendChild(tdname);
-                tdemail.textContent=el.email;
-                tr.appendChild(tdemail);
-               // tdcourse.textcontent=el.address;
-               // tr.appendChild(tdcourse);
-                data.appendChild(tr);
-
-            });
-
-        };table();
-    </script>
-    </script>
+    
+    
 </body>
 </html>
