@@ -11,11 +11,15 @@
  { id: 10, name: "Sneha Kapoor", age: 22, course: "Civil Engineering", marks: 90, feesPaid: true }
  ];
  
+
+ //1
  students.map((el)=>{
     const c=el.name;
     console.log(c);
  });
 
+
+ //2
 const d= students.map((el)=>
     {
         return ` name: ${el.name}  course:${el.course}`
@@ -23,6 +27,8 @@ const d= students.map((el)=>
  });
 console.log(d);
 
+
+//3
 students.map((el)=>
 {
     const e=el.marks=el.marks+5;
@@ -30,12 +36,16 @@ students.map((el)=>
 });
 console.log(students);
 
+
+//4
 const f = students.map((el)=>
     {
         return ` ${el.name}  ${el.course}`
     
  });
 console.log(f);
+
+//5
 
 students.map((el)=>{
     if(el.marks>=60)
@@ -51,27 +61,32 @@ console.log(students);
 
 //FILTER
 
+//1
 const g = students.filter((el) =>
     el.course === "Computer Science"
 );
 console.log(g);
 
-
+//2
 const h = students.filter((el) =>
      el.marks >= 80);
 console.log(h);
 
 
-
+//3
 const i=students.filter((el)=>
 el.feesPaid === false);
 console.log(i);
 
+
+//4
 const j=students.filter((el)=>
 el.age>20&& el.marks>70
 );
 console.log(j);
 
+
+//5
 const k=students.filter((el)=>
     el.course="Mechanical"&& el.marks<85
 );
